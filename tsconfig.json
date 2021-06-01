@@ -1,0 +1,38 @@
+// {
+//     // "compileOnSave": false,
+//     // "compilerOptions": {
+//     //   "allowSyntheticDefaultImports": true,
+//     //   "lib": ["dom", "es2015", "es2016"],
+//     //   "jsx": "preserve",
+//     //   "module": "es2015",
+//     //   "moduleResolution": "node",
+//     //   "noEmitOnError": false,
+//     //   "noImplicitAny": true,
+//     //   "preserveConstEnums": true,
+//     //   "removeComments": false,
+//     //   "suppressImplicitAnyIndexErrors": true,
+//     //   "target": "es2015"
+//     // },
+//       "compilerOptions": {
+//     "target": "es5",
+//     "module": "commonjs",
+//     "lib": ["ES2015", "DOM"],
+//     "strict": true,
+//     "types": ["jest"],
+//     "noEmit": true
+//   },
+//     "include": ["cypress/integration/*spec.ts"]
+//   }
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["ES2015", "DOM"],
+    "strict": true,
+    "types": ["jest"],
+    "noEmit": true
+  },
+  // only compile the production TS files
+  "include": ["src/*.ts"],
+  "exclude": ["src/*.test.ts"]
+}

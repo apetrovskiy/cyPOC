@@ -1,0 +1,8 @@
+{
+    "viewportWidth": 1000,
+    "viewportHeight": 1200,
+      "pluginsFile": false,
+  "supportFile": false,
+  "fixturesFolder": false,
+  "baseUrl": "https://account.privo.com"
+}
