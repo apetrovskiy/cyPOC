@@ -21,46 +21,51 @@
 
 */
 
-const { Urls } = require('./url_constants_js');
+const {
+    Urls
+} = require('./url_constants_js');
 
-    // Cypress.on('window:before:load', (win) => {
-    //   Object.defineProperty(win, 'self', {
-    //     get: () => {
-    //       return window.top
-    //     }
-    //   });
-    // });
-
-    Cypress.on('uncaught:exception', (err, runnable) => {
-  // returning false here prevents Cypress from
-  // failing the test
-  return false
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
 });
 
 Cypress.on('window:before:load', (win) => {
-      Object.defineProperty(win, 'self', {
+    Object.defineProperty(win, 'self', {
         get: () => {
-          return window.top
+            return window.top
         }
-      })
+    })
+});
+
+describe('Base URL', () => {
+    it(`Check base URL`, () => {
+        cy.visit("", {
+            onBeforeLoad: (win) => {
+                Object.defineProperty(win, 'self', {
+                    get: () => {
+                        return window.top
+                    }
+                })
+            }
+        });
     });
+});
 
 describe('Continue with Privo from Adobe login NGS', () => {
     it(`Check redirect to Adobe login page from ${Urls.LOGIN_PAGE}`, () => {
-    cy.visit("" // Urls.LOGIN_PAGE //);
-        , {
-      onBeforeLoad: (win) => {
-        Object.defineProperty(win, 'self', {
-          get: () => {
-            return window.top
-          }
-        })
-      }
-    });
-    cy.visit(Urls.LOGIN_PAGE);
-    cy.reload();
-    cy.get('#loginForm button[type=submit]');
-
+        cy.visit(Urls.LOGIN_PAGE, {
+            onBeforeLoad: (win) => {
+                Object.defineProperty(win, 'self', {
+                    get: () => {
+                        return window.top
+                    }
+                })
+            }
+        });
+        cy.get('#loginForm button[type=submit]');
+        cy.title().should('include', 'Login');
         // expect(true).to.equal(true);
     });
 });
