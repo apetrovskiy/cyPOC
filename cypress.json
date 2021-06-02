@@ -1,0 +1,10 @@
+{
+    "viewportWidth": 600,
+    "viewportHeight": 1000,
+    "pluginsFile": false,
+    "supportFile": false,
+    "fixturesFolder": false,
+    "baseUrl": "https://account.privo.com",
+    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 10000
+}
