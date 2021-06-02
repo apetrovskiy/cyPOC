@@ -48,9 +48,6 @@ Cypress.on('window:before:load', (win) => {
 describe('Continue with Privo from Adobe login NGS', () => {
     it(`Check redirect to Adobe login page from ${Urls.LOGIN_PAGE}`, () => {
     cy.visit("" // Urls.LOGIN_PAGE //);
-        // cy.request('GET',Urls.LOGIN_PAGE); 
-        // cy.visit(Urls.LOGIN_PAGE);
-
         , {
       onBeforeLoad: (win) => {
         Object.defineProperty(win, 'self', {
