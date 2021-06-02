@@ -31,41 +31,16 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 });
 
-Cypress.on('window:before:load', (win) => {
-    Object.defineProperty(win, 'self', {
-        get: () => {
-            return window.top
-        }
-    })
-});
-
 describe('Base URL', () => {
     it(`Check base URL`, () => {
-        cy.visit("", {
-            onBeforeLoad: (win) => {
-                Object.defineProperty(win, 'self', {
-                    get: () => {
-                        return window.top
-                    }
-                })
-            }
-        });
+        cy.visit("");
     });
 });
 
 describe('Continue with Privo from Adobe login NGS', () => {
     it(`Check redirect to Adobe login page from ${Urls.LOGIN_PAGE}`, () => {
-        cy.visit(Urls.LOGIN_PAGE, {
-            onBeforeLoad: (win) => {
-                Object.defineProperty(win, 'self', {
-                    get: () => {
-                        return window.top
-                    }
-                })
-            }
-        });
-        cy.get('#loginForm button[type=submit]');
+        cy.visit(Urls.LOGIN_PAGE);
+        cy.url().should('include', '/ag/login/home.html');
         cy.title().should('include', 'Login');
-        // expect(true).to.equal(true);
     });
 });
