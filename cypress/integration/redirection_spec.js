@@ -31,11 +31,12 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 });
 
+/*
 describe('Base URL', () => {
     it(`Check base URL`, () => {
         cy.visit("");
     });
-});
+});*/
 
 describe('Continue with Privo from Adobe login NGS', () => {
     it(`Check redirect to Adobe login page from ${Urls.LOGIN_PAGE}`, () => {

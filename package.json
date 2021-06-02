@@ -10,10 +10,11 @@
     "author": "ap",
     "license": "ISC",
     "devDependencies": {
-        "cypress": "^7.4.0"
+        "cypress": "^6.8.0"
     },
     "dependencies": {
         "@bahmutov/add-typescript-to-cypress": "^2.1.2",
-        "typescript": "^4.3.2"
+        "typescript": "^4.3.2",
+        "update": "^0.4.2"
     }
 }

@@ -6,5 +6,5 @@
     "fixturesFolder": false,
     "baseUrl": "https://account.privo.com",
     "chromeWebSecurity": false,
-    "defaultCommandTimeout": 10000
+    "defaultCommandTimeout": 30000
 }
